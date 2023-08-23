@@ -1,0 +1,8 @@
+main {
+  margin: 80px auto;
+  max-width: 1440px;
+  padding: 0px 30px;
+}
+.card-pointer {
+  cursor: pointer;
+}

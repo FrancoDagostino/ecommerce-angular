@@ -1,0 +1,7 @@
+<mat-card class="fadeIn card-pointer">
+  <img
+    [src]="product | productImage"
+    [alt]="product.title"
+    [routerLink]="['/products', product.slug]"
+  />
+</mat-card>

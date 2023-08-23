@@ -1,0 +1,32 @@
+<main class="grid bm-8 pt-2" *ngFor="let item of product">
+  <div class="col-12 sm:col-6 md:col-6 xl:col-6">
+    <card-product [product]="item"></card-product>
+  </div>
+  <div class="col-12 sm:col-6 md:col-6 xl:col-6">
+    <h1>{{ item.title }}</h1>
+    <h3>${{ item.price }}</h3>
+    <!-- contador -->
+    <h3>Cantidad</h3>
+    <shared-contador></shared-contador>
+    <mat-radio-group aria-label="Select an option" class="p-4">
+      <mat-radio-button
+        [value]="size"
+        *ngFor="let size of item.sizes; let i = index"
+        >{{ size }}</mat-radio-button
+      >
+    </mat-radio-group>
+    <p class="p-2">
+      Descripción <br />
+      {{ item.description }}
+    </p>
+    <button
+      *ngIf="item.inStock === 0"
+      mat-fab
+      extended
+      color="primary"
+      disabled
+    >
+      No hay stock
+    </button>
+  </div>
+</main>
