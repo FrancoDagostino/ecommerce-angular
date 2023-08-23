@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs';
 })
 export class ProductBySlugComponent implements OnInit {
   public product?: Product[];
-
+  public count: number = 0;
   constructor(
     private productService: ProductService,
     private activeRoute: ActivatedRoute,
@@ -25,5 +25,9 @@ export class ProductBySlugComponent implements OnInit {
         if (!product) return this.router.navigateByUrl('/products/kids');
         return (this.product = product);
       });
+  }
+
+  onContadorChange(contador: number) {
+    this.count = contador;
   }
 }
